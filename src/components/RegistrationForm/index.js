@@ -22,28 +22,16 @@ class RegistrationForm extends Component {
     this.setState({lastName: event.target.value})
   }
 
-  onBlurFirstName = event => {
-    if (event.target.value === '') {
-      this.setState({
-        showFirstNameError: true,
-      })
-    } else {
-      this.setState({
-        showFirstNameError: false,
-      })
-    }
+  onBlurFirstName = () => {
+    const {firstName} = this.state
+    const isValid = firstName === ''
+    this.setState({showFirstNameError: isValid})
   }
 
-  onBlurSecondName = event => {
-    if (event.target.value === '') {
-      this.setState({
-        showSecondNameError: true,
-      })
-    } else {
-      this.setState({
-        showSecondNameError: false,
-      })
-    }
+  onBlurSecondName = () => {
+    const {lastName} = this.state
+    const isValid = lastName === ''
+    this.setState({showSecondNameError: isValid})
   }
 
   submitForm = event => {
