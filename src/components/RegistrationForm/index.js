@@ -53,8 +53,11 @@ class RegistrationForm extends Component {
         showSecondNameError: true,
       })
     } else {
-      onChangeLogged()
-    }
+      this.setState({
+        showFirstNameError: false,
+        showSecondNameError: false,
+        isLogged: true,
+    })
   }
 
   render() {
